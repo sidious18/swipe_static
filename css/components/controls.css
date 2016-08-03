@@ -62,8 +62,16 @@
 	background-image: url(../../images/checked.png);
 }
 
+.control-checkbox-label.enabled:befote{
+	content: url(../../images/checked.png);
+}
+
 .control-checkbox-label.disabled{
 	background-image: url(../../images/unchecked.png);
+}
+
+.control-checkbox-label.disabled:befote{
+	content: url(../../images/unchecked.png);
 }
 
  .control-radio-cont{
