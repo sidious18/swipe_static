@@ -70,6 +70,7 @@
 }
 
 .main-footer-social-facebook{
+	background-image: url(../../images/footer-facebook-hovered.png);
 	background-image: url(../../images/footer-facebook.png);
 	margin-right: 10px;
 }
@@ -79,6 +80,7 @@
 }
 
 .main-footer-social-twitter{
+	background-image: url(../../images/footer-twitter-hovered.png);
 	background-image: url(../../images/footer-twitter.png);
 	margin-right: 10px;
 }
@@ -88,6 +90,7 @@
 }
 
 .main-footer-social-linkedin{
+	background-image: url(../../images/footer-linkedin-hovered.png);
 	background-image: url(../../images/footer-linkedin.png);
 	margin-right: 10px;
 }
@@ -97,6 +100,7 @@
 }
 
 .main-footer-social-youtube{
+	background-image: url(../../images/footer-youtube-hovered.png);
 	background-image: url(../../images/footer-youtube.png);
 }
 

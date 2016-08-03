@@ -28,6 +28,7 @@
 
 .control-search-input-icon{
 	display: inline-block;
+	background-image: url(../../images/search-icon-hovered.png);
 	background-image: url(../../images/search-icon.png);
 	background-repeat: no-repeat;
 	position: absolute;
@@ -59,10 +60,12 @@
 }
 
 .control-checkbox-label.enabled{
+	background-image: url(../../images/unchecked.png);
 	background-image: url(../../images/checked.png);
 }
 
 .control-checkbox-label.disabled{
+	background-image: url(../../images/checked.png);
 	background-image: url(../../images/unchecked.png);
 }
 
