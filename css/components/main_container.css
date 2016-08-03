@@ -34,7 +34,6 @@
 }
 
 .main-container-menu-switcher{
-	background-image: url(../../images/bottom-arrow.png);
 	background-image: url(../../images/top-arrow.png);
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -47,7 +46,6 @@
 }
 
 .main-container-menu-switcher.minified{
-	background-image: url(../../images/top-arrow.png);
 	background-image: url(../../images/bottom-arrow.png);
 }
 
@@ -78,7 +76,6 @@
 }
 
 .main-container-menu-submit-button{
-	background-image: url(../../images/search-button-hovered.png);
 	background-image: url(../../images/search-button.png);
 	background-color: transparent;
 	border:none;
@@ -87,6 +84,12 @@
 	width: 199px;
 	height: 45px;
 	cursor: pointer;
+}
+
+.main-container-menu-submit:before{
+	content: url(../../images/search-button-hovered.png);
+	display: none;
+
 }
 
 .main-container-menu-submit-button:hover{
