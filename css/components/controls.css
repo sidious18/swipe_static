@@ -26,6 +26,11 @@
 	max-width: 200px;
 }
 
+.control-search:before{
+	content:url(../../images/search-icon.png);
+	display: none;
+}
+
 .control-search-input-icon{
 	display: inline-block;
 	background-image: url(../../images/search-icon.png);

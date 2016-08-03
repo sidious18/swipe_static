@@ -116,7 +116,7 @@
 }
 
 .main-footer-social-youtube > p:before{
-	content:url(../../images/footer-linkedin-youtube.png);
+	content:url(../../images/footer-linkedin-youtube-hovered.png);
 	display: none;
 }
 
