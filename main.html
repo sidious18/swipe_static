@@ -1,0 +1,1408 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<title>SwipeNews</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/libraries/bx_styles.css">
+		<link rel="stylesheet" href="css/libraries/reset.css">
+		<link rel="stylesheet" href="css/libraries/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" href="css/components/main_header.css">
+		<link rel="stylesheet" href="css/components/main_container.css">
+		<link rel="stylesheet" href="css/components/main_footer.css">
+		<link rel="stylesheet" href="css/components/controls.css">
+		<link rel="stylesheet" href="css/components/article-list.css">
+		<script src="javascript/libraries/jquery.min.js"></script>
+		<script src="javascript/libraries/jquery.bxSlider.min.js"></script>
+		<script src="javascript/libraries/jquery.mCustomScrollbar.js"></script>
+		<script src="javascript/controls.js"></script>
+		<script src="javascript/article-list.js"></script>
+	</head>	
+	<body>
+		<header class="main-header">
+			<div class="main-header-cont">
+				<a href=""><img src="images/main_logo.png" alt="Main Logo" class="main-header-logo"></a>
+				<a href="#" class="control-default">About</a>
+				<div class="control-search">
+					<input type="text" class="control-search-input" placeholder="Search...">
+					<span class="control-search-input-icon"></span>
+				</div>
+			</div>
+		</header>
+		<main class="main-content">
+			<div class="main-content-box">
+				<form class="main-container-menu">
+					<div class="main-container-menu-category">
+						<div class="control-checkbox-cont">
+							<input type="checkbox" class="main-container-category-checker" id="uk-news-all">
+							<label class="control-checkbox-label" for="uk-news-all">UK News (Select All)</label>
+							<div class="main-container-menu-switcher"></div>
+						</div>
+
+						<div class="main-containter-menu-subcategory">
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="daily-mail">
+								<label class="control-checkbox-label" for="daily-mail">Daily Mail</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="daily-telegraph">
+								<label class="control-checkbox-label" for="daily-telegraph">Daily Telegraph</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="the-mirror">
+								<label class="control-checkbox-label" for="the-mirror">The Mirror</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="the-guardian">
+								<label class="control-checkbox-label" for="the-guardian">The Guardian</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="the-independent">
+								<label class="control-checkbox-label" for="the-independent">The Independent</label>
+							</div>
+						</div>
+						<hr class="main-container-menu-category-line">
+					</div>
+					<div class="main-container-menu-category">
+						<div class="control-checkbox-cont">
+							<input type="checkbox" class="main-container-category-checker" id="int-news">
+							<label class="control-checkbox-label" for="int-news">International News (Select All)</label>
+							<div class="main-container-menu-switcher"></div>
+						</div>
+
+						<div class="main-containter-menu-subcategory">
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="fox-news">
+								<label class="control-checkbox-label" for="fox-news">Fox News</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="china-daily">
+								<label class="control-checkbox-label" for="china-daily">China Daily</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="russia-today">
+								<label class="control-checkbox-label" for="russia-today">Russia Today</label>
+							</div>
+
+						</div>
+						<hr class="main-container-menu-category-line">
+					</div>
+					<div class="main-container-menu-category">
+						<div class="control-checkbox-cont">
+							<input type="checkbox" class="main-container-category-checker" id="sections">
+							<label class="control-checkbox-label" for="sections">Sections (Select All)</label>
+							<div class="main-container-menu-switcher"></div>
+						</div>
+
+						<div class="main-containter-menu-subcategory">
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="editorials">
+								<label class="control-checkbox-label" for="editorials">Editorials</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="comments">
+								<label class="control-checkbox-label" for="comments">Comments/Columnists</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="uk-news">
+								<label class="control-checkbox-label" for="uk-news">UK News</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="us-news">
+								<label class="control-checkbox-label" for="us-news">US News</label>
+							</div>
+
+							<div class="control-checkbox-cont">
+								<input class="main-container-subcategory-checker" type="checkbox" id="world-news">
+								<label class="control-checkbox-label" for="world-news">World News</label>
+							</div>
+
+						</div>
+						<hr class="main-container-menu-category-line">
+					</div>
+					<div class="main-container-menu-category">
+						<div class="control-radio-cont">
+							<input type="radio" name="sort-time" id="radio-hours" value="hours" class="control-radiobutton">
+							<label for="radio-hours" class="control-radiobutton-label">Last 24 hours</label>
+						</div>
+						<div class="control-radio-cont">
+							<input type="radio" name="sort-time" id="radio-days" value="days" class="control-radiobutton">
+							<label for="radio-days" class="control-radiobutton-label">Last 3 days</label>
+						</div>
+						<div class="control-radio-cont">
+							<input type="radio" name="sort-time" id="radio-week" value="week" class="control-radiobutton">
+							<label for="radio-week" class="control-radiobutton-label">Last week</label>
+						</div>		
+						<hr class="main-container-menu-category-line">				
+					</div>
+					<div class="main-container-menu-submit">
+						<input type="submit" class="main-container-menu-submit-button">
+					</div>
+				</form>
+				<section class="main-container-article">
+					<h2 class=main-container-article-title>
+						Through the application 
+					</h2>
+					<p class="main-container-article-description">
+						Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. 
+					</p>
+					<div class="article-cont-list">
+						<article class="article-cont">
+							<div class="article-list">
+								<div class="article-list-title">
+									Editorials
+								</div>
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/usa-flag.png" alt="USA flag" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												Elections in the U.S.
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/president.png" alt="president" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												President of Turkey made an inteview
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/gas-image.png" alt="Gas" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												Russia will be selling gas to Poland
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/obama.png" alt="Obama" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												Obama will meet Putin
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</article>
+
+						<article class="article-cont">
+							<div class="article-list">
+								<div class="article-list-title">
+									comments
+								</div>
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/usa-flag.png" alt="USA flag" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												Elections in the U.S.
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/president.png" alt="president" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												President of Turkey made an inteview
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/gas-image.png" alt="Gas" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												Russia will be selling gas to Poland
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="article-list-element">
+									<div class="article-top">
+										<div class="article-list-counter">3</div>
+										<img src="images/obama.png" alt="Obama" class="article-list-image">
+										<div class="article-header">
+											<h3 class="article-header-title">
+												Obama will meet Putin
+											</h3>
+											<footer class="article-header-publishers">
+												<a href='#' class="arctile-header-publisher">
+													Daily Mail
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													Daily Telegraph
+												</a>
+												<a href='#' class="arctile-header-publisher">
+													The Guardian
+												</a>
+											</footer>
+										</div>
+									</div>
+									<div class="article-slider-cont">
+										<div class="article-slider-box">
+											<ul class="article-slider">
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+												<li class="acticle-slide">
+													<img class="article-slide-publisher-icon" src="images/guardian-image.png" alt="The Guardian">
+													<div class="article-slide-cont">
+														<header class="acticle-slide-top">
+															<div class="article-slide-top-time">
+																17:30 <span>GMT,</span> 5 July 2016
+															</div>
+															<div class="article-slide-top-socials">
+																<a href="#" class="article-slide-top-facebook"></a>
+																<a href="#" class="article-slide-top-twitter"></a>
+																<a href="#" class="article-slide-top-linkedin"></a>
+															</div>
+														</header>
+														<img src="images/big-usa-flag.png" alt="usa-flag" class="article-slide-main-image">
+														<p class="article-slide-description">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+														</p>
+														<footer class="article-slide-link-cont">
+															<a href="#" class="article-slide-link">
+																Full Article
+															</a>
+														</footer>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</article>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<footer class="main-footer">
+			<div class="main-footer-cont">
+				<div class="main-footer-contacts">
+					<h3 class="main-footer-contacts-title">Contact Us</h3>
+					<div class="main-footer-contacts-links">
+						<h4 class="main-footer-contacts-links-title">
+							General: 
+						</h4>
+						<a href="#" class="main-footer-contacts-link">
+							info@swipenews.com
+						</a>
+						<h4 class="main-footer-contacts-links-title">
+							Partnerships:
+						</h4>
+						<a href="#" class="main-footer-contacts-link">
+							partner@swipenews.com
+						</a>
+					</div>
+				</div>
+				<div class="main-footer-info">
+					<a href="#" class="main-footer-info-logo">
+						<img src="images/footer-logo-icon.png" alt="Footer icon">
+					</a>
+					<p class="main-footer-info-discription">
+						Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+					</p>
+					<div class="main-footer-social">
+						<a href="#" class="main-footer-social-facebook"></a>
+						<a href="#" class="main-footer-social-twitter"></a>
+						<a href="#" class="main-footer-social-linkedin"></a>
+						<a href="#" class="main-footer-social-youtube"></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

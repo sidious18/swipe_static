@@ -1,0 +1,44 @@
+{
+  "name": "swipenews",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "bxslider": "latest",
+    "reset-css": "^2.0.2011012603",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
+  },
+  "install": {
+    "sources": {
+      "jquery": {
+        "mapping": [
+          {
+            "bower_components/jquery/dist/jquery.min.js": "javascript/libraries/jquery.min.js"
+          }
+        ]
+      },
+      "bxslider": {
+        "mapping": [
+          {
+            "bower_components/bxslider/bx_styles/bx_styles.css": "css/libraries/bx_styles.css"
+          },
+          {
+            "bower_components/bxslider/jquery.bxSlider.min.js": "javascript/libraries/jquery.bxSlider.min.js"
+          }
+        ]
+      },
+      "reset-css": {
+        "mapping": [
+          {
+            "bower_components/reset-css/reset.css": "css/libraries/reset.css"
+          }
+        ]
+      },
+      "malihu-custom-scrollbar-plugin": {
+        "mapping": [
+          {"bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js": "javascript/libraries/jquery.mCustomScrollbar.js"},
+          {"bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css": "css/libraries/jquery.mCustomScrollbar.min.css"}
+        ]
+      }
+    }
+  }
+}

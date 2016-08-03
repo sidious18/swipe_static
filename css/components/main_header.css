@@ -1,0 +1,22 @@
+.main-header{
+	width: 100%;
+	background-image: linear-gradient(to right, #31f5f1 0%, #02a3f0 100%);
+}
+
+.main-header-cont{
+	width: 1200px;
+	padding: 20px;
+	margin:auto;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.main-header-cont .control-default{
+	margin-left: auto;
+	margin-right: 20px;
+}
