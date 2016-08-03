@@ -58,20 +58,22 @@
 	background-position: center left;
 }
 
+.control-checkbox-label:before{
+	content: "url(../../images/checked.png)";
+	display: none;
+}
+
+.control-checkbox-label:before{
+	content: url(../../images/unchecked.png);
+	display: none;
+}
+
 .control-checkbox-label.enabled{
 	background-image: url(../../images/checked.png);
 }
 
-.control-checkbox-label.enabled:befote{
-	content: url(../../images/checked.png);
-}
-
 .control-checkbox-label.disabled{
 	background-image: url(../../images/unchecked.png);
-}
-
-.control-checkbox-label.disabled:befote{
-	content: url(../../images/unchecked.png);
 }
 
  .control-radio-cont{
@@ -90,6 +92,11 @@
 	padding-left: 20px;
 	color:#fff;
 	cursor: pointer;
+}
+
+.control-radiobutton-label:before{
+	content: url(../../images/radio-checked.png);
+	display: none;
 }
 
 .control-radiobutton:checked + .control-radiobutton-label{

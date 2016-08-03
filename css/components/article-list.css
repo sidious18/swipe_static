@@ -113,8 +113,16 @@
 	background-image: url(../../images/next-slide-hover.png);	
 }
 
+.article-slider-box .bx-next:before{
+	content:url(../../images/next-slide.png);
+}
+
 .article-slider-box .bx-next:focus{
 	outline: none;
+}
+
+.article-slider-box .bx-prev:before{
+	content:url(../../images/prev-slide.png);
 }
 
 .article-slider-box .bx-prev{
