@@ -78,9 +78,19 @@
 	background-image: url(../../images/footer-facebook-hovered.png);
 }
 
+.main-footer-social-facebook > p:before{
+	content:url(../../images/footer-facebook-hovered.png);
+	display: none;
+}
+
 .main-footer-social-twitter{
 	background-image: url(../../images/footer-twitter.png);
 	margin-right: 10px;
+}
+
+.main-footer-social-twitter > p:before{
+	content:url(../../images/footer-twitter-hovered.png);
+	display: none;
 }
 
 .main-footer-social-twitter:hover{
@@ -92,12 +102,22 @@
 	margin-right: 10px;
 }
 
+.main-footer-social-linkedin > p:before{
+	content:url(../../images/footer-linkedin-hovered.png);
+	display: none;
+}
+
 .main-footer-social-linkedin:hover{
 	background-image: url(../../images/footer-linkedin-hovered.png);
 }
 
 .main-footer-social-youtube{
 	background-image: url(../../images/footer-youtube.png);
+}
+
+.main-footer-social-youtube > p:before{
+	content:url(../../images/footer-linkedin-youtube.png);
+	display: none;
 }
 
 .main-footer-social-youtube:hover{
