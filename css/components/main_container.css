@@ -57,15 +57,19 @@
 	padding-left: 14px;
 }
 
+.main-containter-menu-subcategory.radio-buttons{
+	padding-left: 0px;
+}
+
 .main-containter-menu-subcategory .control-checkbox-cont:last-child{
 	margin-bottom: 5px;
 	padding-bottom: 20px;
 }
 
-.main-container-menu-category  .control-radio-cont:last-child{
-	margin-bottom: 20px;
-	padding-bottom: 10px;
+.main-container-menu-category div.control-radio-cont:last-child{
+	margin-bottom: 25px;
 }
+
 
 .main-containter-menu-element{
 	margin-bottom: 15px;
