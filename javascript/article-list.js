@@ -62,28 +62,6 @@
 				
 			}
 			else{
-				// $(this).removeClass('opened');
-				// $(articleContList).mCustomScrollbar("update");
-				// $(this).next(articleSlide).animate({
-				// 	height: 0
-				// },
-				// {
-				// 	duration:10000,
-				// 	easing:'linear',
-				// 	step:function(){
-				// 		console.log($('.mCSB_container').css('top'));
-				// 		$(articleContList).mCustomScrollbar("scrollTo",$(this).prev(articleTop),{
-				// 			scrollInertia: 0
-				// 		});
-				// 		$(articleContList).mCustomScrollbar("update");
-
-				// 	},
-				// 	done:function(){
-				// 		$(articleContList).mCustomScrollbar("update");
-				// 		$(this).removeClass('opened');
-				// 	}
-				// })
-
 				var accordButton = $(this);
 				var animateStep = accordButton.next(articleSlide)[0].articleHeigth / 30;
 				var slider = $(articleContList);
