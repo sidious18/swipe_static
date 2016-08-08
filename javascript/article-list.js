@@ -15,7 +15,9 @@
 			$(articleContList).css('height',artileHeight);
 			$(articleContList).mCustomScrollbar({
 				theme:'light-thick',
-				scrollInertia: 300
+				scrollInertia: 300,
+				advanced:{ updateOnContentResize: true },
+				live: "on"
 			});
 
 		}
@@ -61,15 +63,26 @@
 			}
 			else{
 				$(this).removeClass('opened');
+				$(articleContList).mCustomScrollbar("update");
 				$(this).next(articleSlide).animate({
 					height: 0
-				},300,function(){
-					$(this).removeClass('opened');
+				},
+				{
+					duration:0,
+					progress:function(){
+						$(articleContList).mCustomScrollbar("scrollTo",$(this).prev(articleTop),{
+							scrollInertia: 0
+						});
+						$(articleContList).mCustomScrollbar("update");
+					},
+					done:function(){
+						$(articleContList).mCustomScrollbar("update");
+						$(this).removeClass('opened');
+					}
 				})
 			}
 		})
 
-		
-
+	
 	})
 })()
