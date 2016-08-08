@@ -21,7 +21,7 @@
 .main-container-menu-category{
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 }
 
 .main-container-menu-category-line{
@@ -54,12 +54,12 @@
 }
 
 .main-containter-menu-subcategory{
-	padding-left: 10px;
+	padding-left: 14px;
 }
 
 .main-containter-menu-subcategory .control-checkbox-cont:last-child{
 	margin-bottom: 5px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 
 .main-container-menu-category  .control-radio-cont:last-child{
@@ -112,4 +112,5 @@
 .main-container-article-description{
 	color:#fff;
 	margin-bottom: 20px;
+	font-size: 12px;
 }

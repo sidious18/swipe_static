@@ -85,6 +85,7 @@
 .arctile-header-publisher:hover{
 	background: #0cbbef;
 	color:#fff;
+	border-color: #0cbbef;
 }
 
 .article-slider-cont{
@@ -178,9 +179,30 @@
 	top:0px;
 }
 
+.article-slide-publisher-icon:after{
+	content:"";
+	position: absolute;
+	width:64px;
+	height: 64px;
+	left: 0px;
+	top: 0px;
+	background-image: linear-gradient(to bottom, #31f5f1 0%, #02a3f0 70%);
+	z-index: 1;
+	border-radius: 50%;
+}
+
+.article-slide-publisher-icon img{
+	width: 60px;
+	height: 60px;
+	z-index: 2;
+	position: relative;
+	left: 2px;
+	top:2px;
+}
+
 .article-slide-top-time{
 	flex-grow: 1;
-	color:#696969;
+	color:#999;
 	font-size: 12px;
 	padding-right: 10px;
 	margin-left: 40px;
@@ -252,7 +274,7 @@
 	border: 1px solid #696969;
 	padding: 8px 17px;
 	display: inline-block;
-	border-radius: 10px;
+	border-radius: 20px;
 	transition: all 0.1s linear;
 }
 

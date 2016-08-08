@@ -33,15 +33,31 @@
 			}
 		}
 
-		$(articleTop).click(function(){
+		makeSliders();
+		rememberArticleHeight();
+		setArticleBlockHeight();
 
+		$(articleTop).click(function(){
+			
 			if(!$(this).next(articleSlide).hasClass('opened')){
+				
+
 				$(this).addClass('opened');
 				$(this).next(articleSlide).animate({
 					height: $(this).next(articleSlide)[0].articleHeigth
-				},300,function(){
-					$(this).addClass('opened');
+				},
+				{
+					duration:300,
+					progress:function(){
+						$(articleContList).mCustomScrollbar("scrollTo",$(this).prev(articleTop),{
+							scrollInertia: 45
+						});
+					},
+					done:function(){
+						$(this).addClass('opened');
+					}
 				})
+				
 			}
 			else{
 				$(this).removeClass('opened');
@@ -53,9 +69,7 @@
 			}
 		})
 
-		makeSliders();
-		rememberArticleHeight();
-		setArticleBlockHeight();
+		
 
 	})
 })()
