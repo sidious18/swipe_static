@@ -85,22 +85,13 @@
 				// })
 
 				var accordButton = $(this);
-				
 				var animateStep = accordButton.next(articleSlide)[0].articleHeigth / 30;
-				var animateSliderStep = accordButton.position().top / 30;
-
 				var slider = $(articleContList);
-
-
-				var sliderBox = slider.find('.mCSB_container');
-
 				var callCount = 0;
 				var repeater = setInterval(function () {
 				  if (callCount < 30) {
 				  	console.log(accordButton.position().top);
-				  	
 				  	thisStep = accordButton.next(articleSlide)[0].articleHeigth - (animateStep*callCount);
-				  	//sliderBox.css('top','-'+(accordButton.position().top-animateSliderStep*callCount)+'px');
 				    accordButton.next(articleSlide).css('height', thisStep+'px');
 				    slider.mCustomScrollbar("update");
 				    
