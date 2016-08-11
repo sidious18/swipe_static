@@ -75,14 +75,16 @@
 
 			if(!$(this).hasClass("minified")){
 				  $(this).closest(categoryBox).animate({
-				    height: $(categorySwitcher).parent().outerHeight(true)
+				    height: $(categorySwitcher).parent().outerHeight(true) + 10
 				  }, 200, function() {
 				  	$(this).find(categorySwitcher).addClass('minified');
+				  	$(this).find('.main-containter-menu-subcategory').hide();
 				    
 				  });
 				  
 			  }
 			else{
+				$(this).closest('.main-container-menu-category').find('.main-containter-menu-subcategory').show()
 			  	$(this).closest(categoryBox).animate({
 				    height: $(this).closest(categoryBox)[0].boxHeight
 				  }, 200, function() {

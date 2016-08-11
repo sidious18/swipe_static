@@ -1,5 +1,7 @@
 .article-cont{
 	margin-bottom: 15px;
+	border-radius:5px;
+	background: #fff;
 }
 
 .article-cont-list{
@@ -8,6 +10,10 @@
 
 .article-cont-list .article-cont:last-child{
 	margin-bottom: 0px;
+}
+
+.article-cont-list .article-cont .article-list-element:last-child .article-top{
+	border-bottom: 0px;
 }
 
 .article-list-title{
@@ -30,10 +36,13 @@
 	border-left-width: 5px;
 	border-color: transparent;
 	border-style: solid;
-	background-color: #fff;
 	border-bottom: 1px solid #ccc;
 	padding: 10px 20px;
 	cursor: pointer;
+}
+
+.article-list .article-list-element:last-child{
+	border-bottom: 0px;
 }
 
 .article-top:hover, .article-top.opened{
@@ -43,8 +52,14 @@
 .article-list-counter{
 	background-image: linear-gradient(to bottom, #31f5f1 0%, #02a3f0 70%);
 	color:#fff;
-	padding: 1px 5px;
+	padding: 2px 5px;
 	border-radius: 50%;
+	font-size: 14px;
+}
+
+.article-list .article-list-element:last-child .article-slider-cont{
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .article-header{
@@ -73,10 +88,10 @@
 
 .arctile-header-publisher{
 	margin-right: 5px;
-	border:1px solid #ccc;
+	border:1px solid #a0a0a0;
 	padding: 4px 10px; 
 	border-radius: 10px;
-	color:#696969;
+	color:#a0a0a0;
 	text-decoration: none;
 	font-size: 12px;
 	transition: all 0.1s linear

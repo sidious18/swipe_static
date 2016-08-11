@@ -58,7 +58,7 @@
 }
 
 .main-containter-menu-subcategory.radio-buttons{
-	padding-left: 0px;
+	padding-left: 4px;
 }
 
 .main-containter-menu-subcategory .control-checkbox-cont:last-child{
@@ -117,4 +117,5 @@
 	color:#fff;
 	margin-bottom: 20px;
 	font-size: 12px;
+	line-height: 16px;
 }
