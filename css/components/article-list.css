@@ -23,7 +23,7 @@
 	text-transform: uppercase;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #E8E8E8;
 }
 
 .article-top{
@@ -36,7 +36,7 @@
 	border-left-width: 5px;
 	border-color: transparent;
 	border-style: solid;
-	padding: 10px 20px;
+	padding: 18px 20px;
 	cursor: pointer;
 	position: relative;
 }
@@ -49,7 +49,7 @@
 	left: -7px;
 	width: 200%;
 	height: 1px;
-	background:#ccc;
+	background:#E8E8E8;
 }
 
 .article-list .article-list-element:last-child{

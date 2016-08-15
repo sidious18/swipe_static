@@ -49,15 +49,15 @@
 			var callCount = 0;
 			var repeater = setInterval(function () {
 			if (callCount < 30) {
+				slider.mCustomScrollbar("update");	 
 			  	var thisStep = elem.next(articleSlide)[0].articleHeigth - (animateStep*callCount);
 			    elem.next(articleSlide).css('height', thisStep+'px');
-			    slider.mCustomScrollbar("update");	    
 				callCount += 1;
 			} else {
+				slider.mCustomScrollbar("update");
 			  	elem.next(articleSlide).css('height', 0);
 			  	elem.removeClass('opened');
 			  	elem.next(articleSlide).removeClass('opened');
-			  	slider.mCustomScrollbar("update");
 			  	if(finalFunc != undefined && finalFuncElem != undefined){
 			  		finalFunc(finalFuncElem);
 			  	}
@@ -72,7 +72,6 @@
 			var callCount = 0;
 			var repeater = setInterval(function () {
 			if (callCount < 12) {
-				console.log(elem.closest(slider).attr('style'));
 			  	var thisStep = articleHeight + (animateStep*callCount);
 			  	slider.mCustomScrollbar("update");
 			    elem.closest(slider).css('height',thisStep+'px');
@@ -112,10 +111,12 @@
 
 		function closeAllAnimation(elem){
 			for (i=0; i<elem.closest(articleBox).find(articleTop).length; i++){
+				console.log(elem.closest(articleBox).find(articleTop).eq(i).hasClass('opened'));
 				if(elem.closest(articleBox).find(articleTop).eq(i).hasClass('opened')){
 					break;
 				}
-				else{
+				if((i+1)==elem.closest(articleBox).find(articleTop).length){
+					console.log("HELLO");
 					elem.closest(articleBox).find(articleHeader).css("height", $(articleHeader).eq(0)[0].articleHeigth + 'px');
 					elem.closest(articleContList).animate({
 						height: articleHeight},
