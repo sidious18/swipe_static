@@ -49,15 +49,17 @@
 			var callCount = 0;
 			var repeater = setInterval(function () {
 			if (callCount < 30) {
-				slider.mCustomScrollbar("update");	 
+				
 			  	var thisStep = elem.next(articleSlide)[0].articleHeigth - (animateStep*callCount);
 			    elem.next(articleSlide).css('height', thisStep+'px');
 				callCount += 1;
+				slider.mCustomScrollbar("update");	 
 			} else {
-				slider.mCustomScrollbar("update");
+				
 			  	elem.next(articleSlide).css('height', 0);
 			  	elem.removeClass('opened');
 			  	elem.next(articleSlide).removeClass('opened');
+			  	slider.mCustomScrollbar("update");
 			  	if(finalFunc != undefined && finalFuncElem != undefined){
 			  		finalFunc(finalFuncElem);
 			  	}
