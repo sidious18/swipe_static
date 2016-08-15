@@ -4,18 +4,23 @@
 		var articleTop = ".article-top";
 		var articleSlider = '.article-slider';
 		var mainMenu = ".main-container-menu";
+		var articleBox = ".main-container-article";
 		var articleTitle = '.main-container-article-title';
 		var articleDescription = ".main-container-article-description"
 		var articleContList = ".article-cont-list";
+		var articleHeader = ".main-container-header";
+		var mainMenuHeight = $(mainMenu).outerHeight();
+		var topTextHeight;
+		var articleHeight;
 
 		function setArticleBlockHeight(){
-			var topTextHeight = $(articleTitle).outerHeight(true)+$(articleDescription).outerHeight(true);
-			var artileHeight = $(mainMenu).outerHeight()-topTextHeight;
-
-			$(articleContList).css('height',artileHeight);
+			topTextHeight = $(articleTitle).outerHeight(true)+$(articleDescription).outerHeight(true);
+			articleHeight = $(mainMenu).outerHeight()-topTextHeight;
+			$(articleContList).css('height',articleHeight);
 			$(articleContList).mCustomScrollbar({
 				theme:'light-thick',
 				scrollInertia: 300,
+				alwaysShowScrollbar: 2,
 				advanced:{ updateOnContentResize: true },
 				live: "on"
 			});
@@ -33,59 +38,120 @@
 				$(articleSlide).eq(i)[0].articleHeigth = $(articleSlide).eq(i).outerHeight();
 				$(articleSlide).eq(i).css('height','0');	
 			}
+			$(articleHeader).eq(0)[0].articleHeigth = $(articleHeader).eq(0).outerHeight(true) + 15;
+			$(articleHeader).eq(0).css('height', $(articleHeader).eq(0)[0].articleHeigth+'px');
 		}
 
-		makeSliders();
-		rememberArticleHeight();
-		setArticleBlockHeight();
+		function customAnimation(elem, value, finalFunc, finalFuncElem){
 
-		$(articleTop).click(function(){
-			
-			if(!$(this).next(articleSlide).hasClass('opened')){
-				
+			var animateStep = value / 30;
+			var slider = $(articleContList);
+			var callCount = 0;
+			var repeater = setInterval(function () {
+			if (callCount < 30) {
+			  	var thisStep = elem.next(articleSlide)[0].articleHeigth - (animateStep*callCount);
+			    elem.next(articleSlide).css('height', thisStep+'px');
+			    slider.mCustomScrollbar("update");	    
+				callCount += 1;
+			} else {
+			  	elem.next(articleSlide).css('height', 0);
+			  	elem.removeClass('opened');
+			  	elem.next(articleSlide).removeClass('opened');
+			  	slider.mCustomScrollbar("update");
+			  	if(finalFunc != undefined && finalFuncElem != undefined){
+			  		finalFunc(finalFuncElem);
+			  	}
+			    clearInterval(repeater);
+			    }
+			}, 1);
+		}
 
-				$(this).addClass('opened');
-				$(this).next(articleSlide).animate({
-					height: $(this).next(articleSlide)[0].articleHeigth
+		function articleListAnimation(elem, value, finalFunc, finalFuncVal){
+			var animateStep = (value - articleHeight) / 12;
+			var slider = $(articleContList);
+			var callCount = 0;
+			var repeater = setInterval(function () {
+			if (callCount < 12) {
+				console.log(elem.closest(slider).attr('style'));
+			  	var thisStep = articleHeight + (animateStep*callCount);
+			  	slider.mCustomScrollbar("update");
+			    elem.closest(slider).css('height',thisStep+'px');
+				callCount += 1;
+			} else {
+				slider.mCustomScrollbar("update");
+			  	elem.closest(slider).css('height',thisStep+'px');
+			  	clearInterval(repeater);
+			  	slider.addClass('opened');
+			  	finalFunc(finalFuncVal);
+			    }
+			}, 1);
+		}
+
+		function animateSlider(elem, finalFunc,finalFuncElem ){
+			if(!elem.hasClass('opened')){
+				elem.next(articleSlide).animate({
+					height: elem.next(articleSlide)[0].articleHeigth
 				},
 				{
 					duration:300,
 					progress:function(){
-						$(articleContList).mCustomScrollbar("scrollTo",$(this).prev(articleTop),{
+						$(articleContList).mCustomScrollbar("scrollTo",elem,{
 							scrollInertia: 45
 						});
 					},
 					done:function(){
-						$(this).addClass('opened');
+						elem.addClass('opened');
 					}
 				})
 				
 			}
 			else{
-				var accordButton = $(this);
-				var animateStep = accordButton.next(articleSlide)[0].articleHeigth / 30;
-				var slider = $(articleContList);
-				var callCount = 0;
-				var repeater = setInterval(function () {
-				  if (callCount < 30) {
-				  	console.log(accordButton.position().top);
-				  	thisStep = accordButton.next(articleSlide)[0].articleHeigth - (animateStep*callCount);
-				    accordButton.next(articleSlide).css('height', thisStep+'px');
-				    slider.mCustomScrollbar("update");
-				    
-				    callCount += 1;
-				  } else {
-				  	accordButton.next(articleSlide).css('height', 0);
-				  	accordButton.removeClass('opened');
-				  	accordButton.next(articleSlide).removeClass('opened');
-				  	slider.mCustomScrollbar("update");
-				    clearInterval(repeater);
-				  }
-				}, 1);
-
+				customAnimation(elem, elem.next(articleSlide)[0].articleHeigth, closeAllAnimation, elem);
 			}
+		}
+
+		function closeAllAnimation(elem){
+			for (i=0; i<elem.closest(articleBox).find(articleTop).length; i++){
+				if(elem.closest(articleBox).find(articleTop).eq(i).hasClass('opened')){
+					break;
+				}
+				else{
+					elem.closest(articleBox).find(articleHeader).css("height", $(articleHeader).eq(0)[0].articleHeigth + 'px');
+					elem.closest(articleContList).animate({
+						height: articleHeight},
+						1, function() {
+							$(this).removeClass('opened');
+					});
+				}
+			}
+		}
+
+		$(articleTop).click(function(){
+			var ifHeaderTextShowed;
+			var clickedObj = $(this);
+			for (i=0; i<$(this).closest(articleBox).find(articleTop).length; i++){
+				ifHeaderTextShowed = true;
+				if($(articleTop).eq(i).hasClass('opened')){
+					ifHeaderTextShowed = false;
+					break;
+				}
+			}
+			if(ifHeaderTextShowed){
+				if(!$(articleContList).hasClass('opened')){
+					$(this).closest(articleBox).find(articleHeader).css("height", 0);
+					articleListAnimation($(this), mainMenuHeight,animateSlider,clickedObj);
+				}
+			}
+			else{
+				animateSlider(clickedObj);
+			}		
+			
 		})
 
+
+		makeSliders();
+		rememberArticleHeight();
+		setArticleBlockHeight();
 	
 	})
 })()

@@ -18,6 +18,12 @@
 	width: 25%;
 }
 
+.main-container-header{
+	transition: all 0.3s linear;
+	padding-right: 30px;
+	overflow: hidden;
+}
+
 .main-container-menu-category{
 	position: relative;
 	overflow: hidden;
@@ -115,7 +121,6 @@
 
 .main-container-article-description{
 	color:#fff;
-	margin-bottom: 20px;
 	font-size: 12px;
 	line-height: 16px;
 }

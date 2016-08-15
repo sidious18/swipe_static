@@ -36,9 +36,20 @@
 	border-left-width: 5px;
 	border-color: transparent;
 	border-style: solid;
-	border-bottom: 1px solid #ccc;
 	padding: 10px 20px;
 	cursor: pointer;
+	position: relative;
+}
+
+.article-top:after{
+	content:"";
+	position: absolute;
+	display: block;
+	bottom: 0px;
+	left: -7px;
+	width: 200%;
+	height: 1px;
+	background:#ccc;
 }
 
 .article-list .article-list-element:last-child{
@@ -54,7 +65,7 @@
 	color:#fff;
 	padding: 2px 5px;
 	border-radius: 50%;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .article-list .article-list-element:last-child .article-slider-cont{
@@ -294,9 +305,9 @@
 }
 
 .article-slide-link:hover{
-	background: #6ab9ec;
+	background: #0cbbef;
 	color:#fff;
-	border-color:#6ab9ec;
+	border-color:#0cbbef;
 }
 
 .article-cont-list .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCS-light-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
