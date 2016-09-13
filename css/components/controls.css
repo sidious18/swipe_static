@@ -112,3 +112,67 @@
 .control-radiobutton:checked + .control-radiobutton-label{
 	background-image: url(../../images/radio-checked.png);
 }
+
+.btn-big{
+	display: inline-block;
+	padding:10px 40px;
+	color:#fff;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.btn-gradient{
+	background: #8FF4F1; /* Old browsers */
+    background: -moz-linear-gradient(left, #8FF4F1 0%, #599CE8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #8FF4F1 0%,#599CE8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #8FF4F1 0%,#599CE8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ef3ef', endColorstr='#039fee',GradientType=1 ); /* IE6-9 */
+    -webkit-backface-visibility: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-gradient span{
+	position: relative;
+	z-index: 3;
+}
+
+.btn-gradient:after{
+	content:"";
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0px;
+	left: 0px;
+	border-radius: inherit;
+	background: #599EEC;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.3s linear;
+}
+
+.btn-gradient:hover:after{
+	opacity: 1;
+}
+
+.btn-rounded{
+	border-radius: 25px;
+
+}
+
+.btn-small{
+	color:#fff;
+	display: inline-block;
+	border: 1.5px solid #fff;
+	border-radius: 20px;
+	padding: 5px 16px 3px;
+	transition: all 0.3s linear;
+	cursor: pointer;
+}
+
+.btn-small:hover{
+	color:#599EEC;
+	border-color:#fff;
+	background-color:#fff;
+}
